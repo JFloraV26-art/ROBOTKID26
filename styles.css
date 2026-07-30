@@ -1,0 +1,636 @@
+/* RESET DE ESTILOS GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONDO GENERAL CON PATRÓN INFANTIL DE ROBOTS, TUERCAS Y ESTRELLAS */
+body {
+    background-color: #f4efff;
+    background-image: 
+        radial-gradient(#6c5ce7 1.2px, transparent 1.2px), 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100"><text x="10" y="30" font-size="20" opacity="0.18">🤖</text><text x="70" y="40" font-size="16" opacity="0.2">⚙️</text><text x="40" y="80" font-size="18" opacity="0.2">⭐</text><text x="80" y="90" font-size="14" opacity="0.18">⚡</text><text x="15" y="95" font-size="15" opacity="0.2">🔧</text></svg>');
+    background-size: 30px 30px, 160px 160px;
+    background-position: 0 0, 0 0;
+    color: #2d3436;
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* ESTILOS DE ETIQUETA CODE DENTRO DE TARJETAS */
+code {
+    font-family: monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* DECORACIONES LATERALES EN PANTALLA */
+body::before {
+    content: "🤖";
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    font-size: 3.5rem;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(-15deg);
+}
+
+body::after {
+    content: "🚀";
+    position: fixed;
+    bottom: 50px;
+    right: 25px;
+    font-size: 4rem;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(15deg);
+}
+
+/* 1. NAVBAR JUGUETONA */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: #ffffff;
+    border-bottom: 4px solid #e0d8f6;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Fredoka', cursive;
+    font-size: 1.8rem;
+    color: #2d3436;
+}
+
+.logo .highlight {
+    color: #6c5ce7;
+}
+
+.nav-links a {
+    color: #574b90;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: #6c5ce7;
+    transform: scale(1.1) rotate(-2deg);
+}
+
+.btn-contacto {
+    background-color: #fbc531;
+    color: #2d3436;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-family: 'Fredoka', cursive;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 0px #e1b12c;
+    transition: all 0.15s;
+}
+
+.btn-contacto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0px #e1b12c;
+}
+
+/* 2. HERO / BANNER ESTILO PÓSTER INFANTIL */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.poster-card {
+    background-color: #2d3436;
+    width: 100%;
+    max-width: 950px;
+    border-radius: 24px;
+    padding: 16px;
+    box-shadow: 0 15px 35px rgba(108, 92, 231, 0.2);
+}
+
+.inner-card {
+    border: 3px dashed #a29bfe;
+    border-radius: 18px;
+    padding: 35px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #6c5ce7 0%, #4834d4 100%);
+    clip-path: polygon(0% 25px, 25px 0%, 100% 0%, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0% 100%);
+    color: #ffffff;
+    position: relative;
+}
+
+.hero-text {
+    width: 55%;
+}
+
+.badge-fun {
+    background-color: #fbc531;
+    color: #2d3436;
+    padding: 4px 14px;
+    border-radius: 15px;
+    font-weight: 900;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 0px #e1b12c;
+}
+
+.sub-title {
+    font-family: 'Fredoka', cursive;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #ffeaa7;
+}
+
+.main-title {
+    font-family: 'Fredoka', cursive;
+    font-size: 3.8rem;
+    line-height: 1;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 4px 4px 0px #2d3436;
+}
+
+.description {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 22px;
+    color: #f8f9fa;
+    line-height: 1.5;
+}
+
+.quick-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* BOTONES ESTILO 3D REDONDEADO */
+.btn-level-fun {
+    background-color: #2d3436;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 5px 0px #1e272e;
+    transition: all 0.15s ease-in-out;
+    border: 2px solid #485460;
+    cursor: pointer;
+}
+
+.btn-level-fun:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0px #1e272e;
+}
+
+.g3-btn:hover { background-color: #fbc531; color: #2d3436; border-color: #fbc531; }
+.g4-btn:hover { background-color: #00b894; color: #ffffff; border-color: #00b894; }
+.g5-btn:hover { background-color: #fd79a8; color: #ffffff; border-color: #fd79a8; }
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+.hero-robot {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.robot-img {
+    filter: drop-shadow(6px 12px 18px rgba(0,0,0,0.3));
+    animation: floatRobot 4s ease-in-out infinite;
+}
+
+@keyframes floatRobot {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+/* 3. SECCIÓN DEL MAPA DE NIVELES DE PROGRAMACIÓN */
+.section-container {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-family: 'Fredoka', cursive;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #6c5ce7;
+    text-shadow: 2px 2px 0px #ffffff;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #574b90;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.bg-interactive-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f4efff 100%);
+    border: 4px solid #a29bfe;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, 0.1);
+}
+
+.mapa-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-reset {
+    background-color: #ff7675;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 3px 0 #d63031;
+    margin-top: 5px;
+}
+
+.btn-reset:hover {
+    transform: translateY(-2px);
+}
+
+.grid-niveles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.level-node {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 4px solid #dfe6e9;
+    box-shadow: 0 8px 0 #b2bec3;
+    transition: all 0.2s ease;
+}
+
+.level-node.unlocked {
+    border-color: #6c5ce7;
+    box-shadow: 0 8px 0 #4834d4;
+    cursor: pointer;
+}
+
+.level-node.unlocked:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 0 #4834d4;
+}
+
+.level-node.completed {
+    background-color: #e8f8f5;
+    border-color: #00b894;
+    box-shadow: 0 8px 0 #00896f;
+}
+
+.level-node.locked {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #f1f2f6;
+}
+
+.node-number {
+    font-size: 2.5rem;
+    font-family: 'Fredoka', cursive;
+}
+
+.node-title {
+    font-weight: 800;
+    color: #2d3436;
+    margin: 8px 0;
+    font-size: 0.95rem;
+}
+
+.node-status {
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #6c5ce7;
+}
+
+/* VENTANA MODAL DEL RETO DE PROGRAMACIÓN */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 52, 54, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    max-width: 600px;
+    width: 90%;
+    border: 5px solid #6c5ce7;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+}
+
+.btn-cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff7675;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.area-mision {
+    background-color: #f4efff;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 15px 0;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.pregunta-destacada {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #4834d4;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px dashed #a29bfe;
+    margin-top: 5px;
+}
+
+/* GRID DE OPCIONES DE RESPUESTA */
+.grid-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-opcion {
+    background-color: #ffffff;
+    color: #2d3436;
+    border: 3px solid #a29bfe;
+    padding: 12px 18px;
+    border-radius: 15px;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s ease;
+    box-shadow: 0 4px 0 #a29bfe;
+}
+
+.btn-opcion:hover {
+    background-color: #6c5ce7;
+    color: #ffffff;
+    border-color: #6c5ce7;
+    box-shadow: 0 4px 0 #4834d4;
+    transform: translateY(-2px);
+}
+
+/* CAJA DE FEEDBACK AL ERROR O ACIERTO */
+.feedback-box {
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 800;
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.feedback-box.error {
+    background-color: #ff7675;
+    color: #ffffff;
+    border: 2px solid #d63031;
+}
+
+.feedback-box.correcto {
+    background-color: #55efc4;
+    color: #2d3436;
+    border: 2px solid #00b894;
+}
+
+/* 4. SECCIÓN DE NIVELES POR GRADO */
+.grid-levels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 30px;
+}
+
+.card-level {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(108, 92, 231, 0.08);
+    transition: all 0.25s ease;
+}
+
+.card-g3 { border: 4px solid #fbc531; }
+.card-g4 { border: 4px solid #00b894; }
+.card-g5 { border: 4px solid #fd79a8; }
+
+.card-level:hover, .card-level.active-grado {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(108, 92, 231, 0.2);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.level-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 15px;
+    font-family: 'Fredoka', cursive;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 0px rgba(0,0,0,0.15);
+}
+
+.bg-yellow { background-color: #fbc531; color: #2d3436; }
+.bg-mint { background-color: #00b894; }
+.bg-pink { background-color: #fd79a8; }
+
+.card-level h3 {
+    font-family: 'Fredoka', cursive;
+    font-size: 2rem;
+    color: #2d3436;
+    text-align: center;
+}
+
+.card-level h4 {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #6c5ce7;
+    font-weight: 800;
+}
+
+.card-level p {
+    font-size: 0.95rem;
+    color: #574b90;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.btn-action {
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px;
+    border-radius: 16px;
+    font-family: 'Fredoka', cursive;
+    font-size: 1.1rem;
+    transition: all 0.15s;
+    display: block;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.bg-yellow-btn { background-color: #fbc531; color: #2d3436; box-shadow: 0 4px 0px #e1b12c; }
+.bg-mint-btn { background-color: #00b894; box-shadow: 0 4px 0px #00896f; }
+.bg-pink-btn { background-color: #fd79a8; box-shadow: 0 4px 0px #e84393; }
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+/* 5. FOOTER DIVERTIDO */
+.main-footer {
+    background-color: #2d3436;
+    color: #ffffff;
+    border-top: 6px solid #fbc531;
+    padding: 45px 40px 20px 40px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto 30px auto;
+}
+
+.footer-brand h3 {
+    font-family: 'Fredoka', cursive;
+    color: #fbc531;
+    font-size: 1.8rem;
+}
+
+.footer-brand p {
+    color: #dfe6e9;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.footer-contact h4 {
+    color: #a29bfe;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    color: #dfe6e9;
+    font-weight: 700;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #b2bec3;
+    border-top: 1px solid #636e72;
+    padding-top: 20px;
+    font-weight: 700;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .inner-card, .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text, .hero-robot {
+        width: 100%;
+    }
+
+    .robot-img {
+        margin-top: 25px;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
